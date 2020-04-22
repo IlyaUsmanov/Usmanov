@@ -13,4 +13,4 @@ jobs:
 
     steps:
     - name: Build
-      run: cmake .
+      run: echo "F" .
