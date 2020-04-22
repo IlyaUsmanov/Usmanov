@@ -13,9 +13,4 @@ jobs:
 
     steps:
     - name: Build
-      run: |
-        mkdir build
-        cd build
-        cmake ..
-        make
-        make install
+      run: cmake .
