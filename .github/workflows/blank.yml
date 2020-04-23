@@ -14,6 +14,7 @@ jobs:
     steps:
     - name: 'Build'
       run: |
+        echo ${pwd}
         git clone https://github.com/google/googletest 3rdparty
         mkdir build
         cd build
