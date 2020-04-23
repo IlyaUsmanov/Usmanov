@@ -2,9 +2,9 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, task4 ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, task4 ]
 
 jobs:
   build:
@@ -12,5 +12,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Build
+    - name: 'Build'
+      run: |
+        git clone https://github.com/google/googletest 3rdparty
+        mkdir build
+        cd build
+        cmake -DCMAKE_INSTALL_PREFIX=$(pwd)/.. ..
+        make
+        make install
+    - name: 'Test'
+      run: echo "k"
+    - name: 'UploadArtifacts'
       run: echo "k"
